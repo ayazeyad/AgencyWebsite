@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\UserServiceRequestController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Auth::routes();
+
+//Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/', [ServiceController::class, 'index'])->name('home');
+Route::get('/home', [ServiceController::class, 'index'])->name('home');
+Route::get('/contact', [ContactUsController::class ,'showContactForm'])->name('contact');
+Route::post('/contact', [ContactUsController::class ,'contactUs'])->name('contactus');
+Route::view('/contact/success', 'success.blade.php')->name('contact');
+
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::post('/request', [UserServiceRequestController::class, 'store']);
 });
+Route::get('/request', [UserServiceRequestController::class, 'index'])->name('request');
