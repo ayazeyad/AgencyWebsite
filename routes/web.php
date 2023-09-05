@@ -31,8 +31,14 @@ Route::get('/contact', [ContactUsController::class ,'showContactForm'])->name('c
 Route::post('/contact', [ContactUsController::class ,'contactUs'])->name('contactus');
 Route::view('/contact/success', 'success.blade.php')->name('contact');
 
+//Route::post('/request', [UserServiceRequestController::class, 'store'])->name('request');
+Route::post('/request', [UserServiceRequestController::class ,'store']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::post('/request', [UserServiceRequestController::class, 'store']);
+    Route::post('/request', [UserServiceRequestController::class, 'store'])->name('request');
 });
 Route::get('/request', [UserServiceRequestController::class, 'index'])->name('request');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

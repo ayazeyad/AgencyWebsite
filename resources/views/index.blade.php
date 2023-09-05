@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="containerSection">
         <div class="left">
             <img src="{{ asset('storage/tech.png') }}" alt="Image" width="400px" height="500px" class="image-on-desktop">
         </div>
@@ -10,20 +10,19 @@
                 <p class="font1">Unlocking Digital <span class="underlined underline-clip">Success</span></p>
                 <p>Your <b>Trusted</b> Partner for Cutting-Edge Marketing, Mobile App Development, and Website Solutions.</p>
             </div>
-            <br><button class="start-button">Start Now >><div>
-                </div></button>
+            <br><button class="start-button"> <a href="request"> Start Now >> </a> </button>
         </div>
     </div>
 
 
     <section class="why-work-with-us" id="services">
-        <div class="container">
+        <div class="containerSection">
             <h3 class="text">Our Comprehensive Services</h3>
 
         @foreach($services as $service)
 
             <div class="reason">
-                <img src="{{ asset('storage/img.png') }}" alt="serviceIcon" width="60px" height="60px">
+                <img src="{{ asset('storage/' . $service->icon) }}" alt="serviceIcon" width="60px" height="60px">
                 <h3>{{ $service->name_en }}</h3>
                 <p>{{ $service->description_en }}</p>
             </div>
@@ -35,7 +34,7 @@
 
 
     <section id="about" class="about-us">
-        <div class="container">
+        <div class="containerSection">
             <div class="left">
                 <h2>About Us</h2>
                 <p>
@@ -54,7 +53,7 @@
 
 
     <section class="why-work-with-us">
-        <div class="container">
+        <div class="containerSection">
             <h2 class="text">Why You Should Work with Us</h2>
             <div class="reason">
                 <img class="icon" src="{{ asset('storage/focus.png') }}" alt="Reason 1" width="60px" height="60px">

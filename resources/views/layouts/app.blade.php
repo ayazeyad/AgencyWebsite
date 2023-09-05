@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-{{--    <link href="./storage/loge.jpg" rel="icon">--}}
+    {{--    <link href="./storage/loge.jpg" rel="icon">--}}
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
 
     <style>
         body{background-color: #4e98b2;}
-        .container {
+        .containerSection {
             display: flex;
             flex-direction: row; /* Horizontal arrangement */
             align-items: center; /* Center vertically */
@@ -30,11 +30,11 @@
         .left img {
             max-width: 100%; /* Ensure the image doesn't exceed the container width */
             height: auto; /* Maintain aspect ratio */
-            margin-right: 20px; /* Optional spacing between image and text */
+            margin-right: 10px; /* Optional spacing between image and text */
         }
 
         .right p {
-            font-size: 24px; /* Adjust font size as needed */
+            font-size: 30px; /* Adjust font size as needed */
         }
 
         .start-button {
@@ -50,13 +50,20 @@
         .start-button:hover {
             background-color: #e1e3e7; /* Change to your desired hover color */
         }
-        .text{padding:0px 350px;}
+        .text {
+            padding:0px 350px;
+        }
+        @media (max-width: 768px) {
+            .text {
+                padding:0px;
+            }
+        }
         .services {
             background-color: #f5f5f5; /* Background color for the section */
             padding: 40px 0; /* Adjust padding as needed */
         }
 
-        .services .container {
+        .services .containerSection {
             display: flex;
             flex-wrap: wrap; /* Allow services to wrap to the next row on smaller screens */
             justify-content: space-between;
@@ -101,14 +108,14 @@
                 width: 100%; /* One service per row on mobile screens */
             }
         }
-/*about us*/
+        /*about us*/
 
         .about-us {
             background-color: #779dc5; /* Background color for the section */
             padding: 60px 0; /* Adjust padding as needed */
         }
 
-        .about-us .container {
+        .about-us .containerSection {
             display: flex;
             flex-direction: column; /* Stack content vertically on small screens */
             align-items: center; /* Center content horizontally */
@@ -137,7 +144,7 @@
         }
         /* Media Query for Responsive Design */
         @media (min-width: 768px) {
-            .about-us .container {
+            .about-us .containerSection {
                 flex-direction: row; /* Side-by-side arrangement on larger screens */
                 justify-content: space-between; /* Distribute content evenly horizontally */
                 align-items: flex-start; /* Align content to the top */
@@ -159,7 +166,7 @@
             padding: 60px 0; /* Adjust padding as needed */
         }
 
-        .why-work-with-us .container {
+        .why-work-with-us .containerSection {
             display: flex;
             flex-wrap: wrap; /* Allow reasons to wrap on smaller screens */
             justify-content: space-between; /* Distribute reasons evenly horizontally */
@@ -170,7 +177,7 @@
 
         .why-work-with-us h2 {
             font-size: 28px; /* Adjust font size as needed */
-            margin-bottom: 20px; /* Add spacing below the heading */
+            margin-bottom: 50px; /* Add spacing below the heading */
             text-align: center; /* Center-align the heading */
             color:blue
         }
@@ -272,9 +279,9 @@
         }
 
         /* Footer Center */
-footer{
-    padding-top:100px;
-}
+        footer{
+            padding-top:100px;
+        }
         .footer-distributed .footer-center{
             width: 35%;
         }
@@ -396,7 +403,7 @@ footer{
             }
 
         }
-/****contact us**/
+        /****contact us**/
         /* Reset some default styles */
         body, h1, h2, p, form {
             margin: 0;
@@ -539,7 +546,7 @@ footer{
             }
         }
 
-/********************/
+        /********************/
 
 
         /* Main content container styles */
@@ -585,46 +592,77 @@ footer{
 
 </head>
 <body>
-    <div id="app">
-        <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-            <a href="../" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-{{--                <h2 class="m-0 text-primary">Fraij Ajency</h2>--}}
-                <img src="{{ asset('storage/logo.jpg') }}" alt="logo" width="60px" height="60px">
-            </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="./" class="nav-item nav-link active">Home</a>
-                    <a href="./#about" class="nav-item nav-link">About</a>
-                    <a href="./#services" class="nav-item nav-link">Services</a>
-                    <a href="./request" class="nav-item nav-link">Request a Service</a>
-                    <a href="./login" class="nav-item nav-link">Login</a>
+<div id="app">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="../" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            {{--                <h2 class="m-0 text-primary">Fraij Ajency</h2>--}}
+            <img src="{{ asset('storage/logo.jpg') }}" alt="logo" width="60px" height="60px">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="./" class="nav-item nav-link active">Home</a>
+                <a href="./#services" class="nav-item nav-link">Services</a>
+                <a href="./#about" class="nav-item nav-link">About</a>
+                <a href="./request" class="nav-item nav-link">Request a Service</a>
+                <a href="./contact" class="nav-item nav-link">Contact</a>
 
-                    {{--                    <div class="nav-item dropdown">--}}
-{{--                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>--}}
-{{--                        <div class="dropdown-menu fade-up m-0">--}}
-{{--                            <a href="feature.html" class="dropdown-item">Feature</a>--}}
-{{--                            <a href="quote.html" class="dropdown-item">Free Quote</a>--}}
-{{--                            <a href="team.html" class="dropdown-item">Our Team</a>--}}
-{{--                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>--}}
-{{--                            <a href="404.html" class="dropdown-item">404 Page</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-                    <a href="./contact" class="nav-item nav-link">Contact</a>
+            @guest
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                    @endif
 
-                </div>
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
+
+                {{--                    <div class="nav-item dropdown">--}}
+                {{--                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>--}}
+                {{--                        <div class="dropdown-menu fade-up m-0">--}}
+                {{--                            <a href="feature.html" class="dropdown-item">Feature</a>--}}
+                {{--                            <a href="quote.html" class="dropdown-item">Free Quote</a>--}}
+                {{--                            <a href="team.html" class="dropdown-item">Our Team</a>--}}
+                {{--                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>--}}
+                {{--                            <a href="404.html" class="dropdown-item">404 Page</a>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
 
             </div>
-        </nav>
-        <!-- Navbar End -->
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <main class="py-4">
+        @yield('content')
+    </main>
+</div>
 </body>
 
 
@@ -674,13 +712,13 @@ footer{
             At Fraij Ajency, we're more than just a digital agency. We're a team of passionate individuals dedicated to transforming ideas into exceptional digital experiences. With creativity at our core and innovation as our compass, we craft digital solutions that drive success for our clients.
         </p>
 
-{{--        <div class="footer-icons">--}}
+        {{--        <div class="footer-icons">--}}
 
-{{--            <a href="#"><i class="fa-facebook-f"></i></a>--}}
-{{--            <a href="#"><i class="fa-instagram"></i></a>--}}
-{{--            <a href="#"><i class="fa linkedin-in"></i></a>--}}
+        {{--            <a href="#"><i class="fa-facebook-f"></i></a>--}}
+        {{--            <a href="#"><i class="fa-instagram"></i></a>--}}
+        {{--            <a href="#"><i class="fa linkedin-in"></i></a>--}}
 
-{{--        </div>--}}
+        {{--        </div>--}}
 
     </div>
 

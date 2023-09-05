@@ -6,7 +6,7 @@
     </header>
     <main>
         <div class="request_container">
-            <form action="#" method="POST">
+            <form action="\request" method="POST">
                 @csrf
                 <label for="service">Select Service:</label>
                 <select id="service" name="service" required>

@@ -4,31 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserServiceRequestStoreRequest;
 use App\Models\Service;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserServiceRequestController extends Controller
 {
-    public function store(UserServiceRequestStoreRequest $request): \Illuminate\Http\JsonResponse
+    public function __construct()
     {
-//        auth()->user()->services()->attach($request->input('service_id'), [
-//            'note' => $request->input('note'),
-//        ]);
-//
-//        return response()->json(['message' => 'Service request submitted successfully']);
+        $this->middleware('auth:sanctum'); // Ensure only authenticated users can access these methods.
+    }
+    public function store(Request $request): \Illuminate\Http\RedirectResponse
+    {
+            $user = auth()->user();
 
+            // Get the selected service
+            $service = Service::query()->findOrFail($request->input('service_id'));
 
-        $request = Auth::user()->services()->create([
-            'service' => $service->id,
-        ]);
+            // Attach the service to the user's requests in the pivot table
+            $user->services()->attach($service, [
+                'note' => $request->input('note'),
+                'status' => 'Pending',
+            ]);
 
-        $request->requests()->attach($request->input('note'));
-
-        return response()->json([
-            'message' => 'success',
-            'data' => null
-        ],201);
-
+            // Redirect the user or perform any other actions as needed
+            return redirect()->route('index')->with('success', 'Request submitted successfully');
     }
 
     public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
@@ -36,7 +36,6 @@ class UserServiceRequestController extends Controller
         $services = Service::all();
 
         return view('request', compact('services'));
-
     }
 
 }
