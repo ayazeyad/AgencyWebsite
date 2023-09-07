@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\TeamMember>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Employee>
  */
-class TeamMemberFactory extends Factory
+class employeeFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +18,7 @@ class TeamMemberFactory extends Factory
     {
         return [
             'name_en' => $this->faker->name,
-            'name_ar' => $this->faker->name,
             'position_en' => $this->faker->jobTitle,
-            'position_ar' => $this->faker->jobTitle,
             'image' => null,
             'email' => $this->faker->unique()->safeEmail,
         ];

@@ -19,10 +19,8 @@ class ServiceFactory extends Factory
         return [
             'icon' => $this->faker->word,
             'name_en' => $this->faker->word,
-            'name_ar' => $this->faker->word,
             'active' => $this->faker->boolean,
             'description_en' => $this->faker->sentence,
-            'description_ar' => $this->faker->sentence,
         ];
     }
 }

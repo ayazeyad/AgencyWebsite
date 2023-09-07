@@ -15,9 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('icon');
             $table->string('name_en');
-            $table->string('name_ar')->nullable();
             $table->text('description_en');
-            $table->text('description_ar')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
         });

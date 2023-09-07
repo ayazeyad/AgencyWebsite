@@ -12,10 +12,8 @@ class Service extends Model
     protected $fillable = [
         'icon',
         'name_en',
-        'name_ar',
         'active',
         'description_en',
-        'description_ar',
     ];
 
     public function clients(): BelongsToMany

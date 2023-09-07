@@ -13,13 +13,19 @@ return new class extends Migration
     {
         Schema::create('user_service', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('service_id');
+            $table->foreignId('user_id')
+                ->references('id')
+                ->on('users')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
+            $table->foreignId('service_id')
+                ->references('id')
+                ->on('services')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->string('note');
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('service_id')->references('id')->on('services');        });
+        });
     }
 
     /**

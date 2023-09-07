@@ -10,7 +10,7 @@ class employeeReview extends Model
     use HasFactory;
 
     protected $fillable = [
-        'team_member_id',
+        'employee_id',
         'review',
     ];
 }

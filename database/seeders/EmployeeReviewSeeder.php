@@ -13,6 +13,6 @@ class EmployeeReviewSeeder extends Seeder
      */
     public function run(): void
     {
-        employeeReview::factory()->count(10)->create();
+        employeeReview::factory(10)->create();
     }
 }

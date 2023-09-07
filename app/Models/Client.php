@@ -13,9 +13,6 @@ class Client extends Model
     protected $fillable = [
         'icon',
         'name_en',
-        'name_ar',
-        'google_play_link',
-        'app_store_link',
     ];
 
     public function services(): BelongsToMany

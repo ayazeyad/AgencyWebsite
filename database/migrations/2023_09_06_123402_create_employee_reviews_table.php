@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('employee_reviews', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('team_member_id');
+            $table->unsignedBigInteger('employee_id');
             $table->text('review');
 
-            $table->foreign('team_member_id')->references('id')->on('team_members')->cascadeOnDelete()->cascadeOnDelete();
+            $table->foreign('employee_id')->references('id')->on('employees')->cascadeOnDelete()->cascadeOnDelete();
             $table->timestamps();
         });
     }

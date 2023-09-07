@@ -19,9 +19,6 @@ class ClientFactory extends Factory
         return [
             'icon' => $this->faker->image,
             'name_en' => $this->faker->company,
-            'name_ar' => $this->faker->company,
-            'google_play_link' => $this->faker->url,
-            'app_store_link' => $this->faker->url,
         ];
     }
 }

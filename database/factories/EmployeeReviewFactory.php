@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\employeeReview;
-use App\Models\TeamMember;
+use App\Models\Employee;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,8 +20,8 @@ class EmployeeReviewFactory extends Factory
     {
         return [
             'review' => $this->faker->sentence,
-            'team_member_id' => function () {
-                return TeamMember::factory()->create()->id;
+            'employee_id' => function () {
+                return Employee::factory()->create()->id;
             },
         ];
     }

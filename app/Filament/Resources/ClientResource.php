@@ -2,22 +2,25 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\EmployeeReviewResource\Pages;
-use App\Filament\Resources\EmployeeReviewResource\RelationManagers;
-use App\Models\EmployeeReview;
+use App\Filament\Resources\ClientResource\Pages;
+use App\Filament\Resources\ClientResource\RelationManagers;
+use App\Models\Client;
 use Filament\Forms;
-use Filament\Forms\Components\Select;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class EmployeeReviewResource extends Resource
+class ClientResource extends Resource
 {
-    protected static ?string $model = EmployeeReview::class;
+    protected static ?string $model = Client::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -25,12 +28,12 @@ class EmployeeReviewResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('employee_id')
-                    ->label(__('Employee Number'))
-                    ->required(),
-                TextInput::make('review')
-                    ->label(__('Employee Review'))
-                    ->required(),
+                TextInput::make('name_en')
+                    ->required()
+                    ->label(__('Name (English)')),
+                FileUpload::make('icon')
+                    ->required()
+                    ->label(__('Icon')),
             ]);
     }
 
@@ -38,7 +41,10 @@ class EmployeeReviewResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('id')
+                    ->label(__('ID')),
+                TextColumn::make('name_en'),
+                ImageColumn::make('icon'),
             ])
             ->filters([
                 //
@@ -61,9 +67,9 @@ class EmployeeReviewResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListEmployeeReviews::route('/'),
-            'create' => Pages\CreateEmployeeReview::route('/create'),
-            'edit' => Pages\EditEmployeeReview::route('/{record}/edit'),
+            'index' => Pages\ListClients::route('/'),
+            'create' => Pages\CreateClient::route('/create'),
+            'edit' => Pages\EditClient::route('/{record}/edit'),
         ];
     }
 }

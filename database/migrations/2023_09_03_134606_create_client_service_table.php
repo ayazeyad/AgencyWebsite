@@ -13,12 +13,17 @@ return new class extends Migration
     {
         Schema::create('client_service', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('client_id');
-            $table->unsignedBigInteger('service_id');
+            $table->foreignId('client_id')
+                ->references('id')
+                ->on('clients')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
+            $table->foreignId('service_id')
+                ->references('id')
+                ->on('services')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->text('status')->nullable();
-
-            $table->foreign('client_id')->references('id')->on('clients');
-            $table->foreign('service_id')->references('id')->on('services');
             $table->timestamps();
         });
     }
