@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserServiceRequestController;
 use Illuminate\Support\Facades\Auth;
@@ -31,13 +32,11 @@ Route::get('/contact', [ContactUsController::class ,'showContactForm'])->name('c
 Route::post('/contact', [ContactUsController::class ,'contactUs'])->name('contactus');
 Route::view('/contact/success', 'success.blade.php')->name('contact');
 
-//Route::post('/request', [UserServiceRequestController::class, 'store'])->name('request');
-Route::post('/request', [UserServiceRequestController::class ,'store']);
-
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::post('/request', [UserServiceRequestController::class, 'store'])->name('request');
+    Route::post('/request', [UserServiceRequestController::class, 'store'])->name('service');
 });
 Route::get('/request', [UserServiceRequestController::class, 'index'])->name('request');
+Route::get('/jobs', [JobController::class, 'index'])->name('jobs');
 
 Auth::routes();
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    {{--    <link href="./storage/loge.jpg" rel="icon">--}}
+        <link href="{{ asset('storage/logo.jpg') }}" rel="icon">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -12,7 +12,9 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+{{--    <link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -21,7 +23,7 @@
         body{background-color: #4e98b2;}
         .containerSection {
             display: flex;
-            flex-direction: row; /* Horizontal arrangement */
+            flex-direction: row;
             align-items: center; /* Center vertically */
             justify-content: space-between; /* Spread elements evenly horizontally */
             padding: 20px; /* Optional spacing */
@@ -588,6 +590,39 @@
             cursor: pointer;
         }
 
+
+
+
+        /* Style for job listings */
+        .job-listings {
+            display: grid;
+            gap: 20px;
+        }
+
+        .job {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .job h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .job-level {
+            font-weight: bold;
+            color: #007BFF;
+            margin: 0;
+        }
+
+        .job-description {
+            margin-top: 10px;
+        }
+
+
     </style>
 
 </head>
@@ -609,6 +644,7 @@
                 <a href="./#about" class="nav-item nav-link">About</a>
                 <a href="./request" class="nav-item nav-link">Request a Service</a>
                 <a href="./contact" class="nav-item nav-link">Contact</a>
+                <a href="./jobs" class="nav-item nav-link">Jobs</a>
 
             @guest
                     @if (Route::has('login'))

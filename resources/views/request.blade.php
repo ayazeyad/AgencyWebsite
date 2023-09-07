@@ -6,7 +6,7 @@
     </header>
     <main>
         <div class="request_container">
-            <form action="\request" method="POST">
+            <form action="{{ route('service') }}"  method="POST">
                 @csrf
                 <label for="service">Select Service:</label>
                 <select id="service" name="service" required>
@@ -16,7 +16,7 @@
                 </select>
 
                 <label for="description">Describe Your Request:</label>
-                <textarea id="description" name="description" rows="4" required></textarea>
+                <textarea id="description" name="description" rows="4"></textarea>
 
                 <button type="submit" class="contact-form">Submit</button>
             </form>

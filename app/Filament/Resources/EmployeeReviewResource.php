@@ -2,22 +2,22 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ContactResource\Pages;
-use App\Filament\Resources\ContactResource\RelationManagers;
-use App\Models\Contact;
-use Exception;
+use App\Filament\Resources\EmployeeReviewResource\Pages;
+use App\Filament\Resources\EmployeeReviewResource\RelationManagers;
+use App\Models\EmployeeReview;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ContactResource extends Resource
+class EmployeeReviewResource extends Resource
 {
-    protected static ?string $model = Contact::class;
+    protected static ?string $model = EmployeeReview::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -25,30 +25,26 @@ class ContactResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('team_member_id')
+                    ->label(__('Team Member Number'))
+                    ->required(),
+                TextInput::make('review')
+                    ->label(__('Employee Review'))
+                    ->required(),
             ]);
     }
 
-    /**
-     * @throws Exception
-     */
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('id')
-                    ->label(__('ID')),
-                TextColumn::make('name')->searchable(),
-                TextColumn::make('email')->searchable(),
-                TextColumn::make('phone')->searchable(),
-                TextColumn::make('message'),
-                TextColumn::make('created_at'),
+                //
             ])
             ->filters([
                 //
             ])
             ->actions([
-//                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -65,9 +61,9 @@ class ContactResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListContacts::route('/'),
-            'create' => Pages\CreateContact::route('/create'),
-            'edit' => Pages\EditContact::route('/{record}/edit'),
+            'index' => Pages\ListEmployeeReviews::route('/'),
+            'create' => Pages\CreateEmployeeReview::route('/create'),
+            'edit' => Pages\EditEmployeeReview::route('/{record}/edit'),
         ];
     }
 }
