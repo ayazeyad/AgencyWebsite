@@ -19,7 +19,7 @@ class NewsFactory extends Factory
         return [
             'title_en' => $this->faker->sentence,
             'description_en' => $this->faker->paragraph,
-            'image' => null, // You can define logic for generating image paths if needed.
+            'image' => null,
         ];
     }
 }

@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
+use Exception;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -31,11 +32,10 @@ class UserResource extends Resource
                     ->email()
                     ->required(),
             ]);
-
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public static function table(Table $table): Table
     {

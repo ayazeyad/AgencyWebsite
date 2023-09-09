@@ -6,10 +6,12 @@ use App\Models\employeeReview;
 use App\Models\job;
 use App\Models\Service;
 use Illuminate\Http\Request;
-
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Foundation\Application;
+use Illuminate\Contracts\View\View;
 class JobController extends Controller
 {
-    public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    public function index(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
     {
         $jobs = Job::all();
         $reviews = employeeReview::all();

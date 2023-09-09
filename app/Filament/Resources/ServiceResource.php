@@ -44,6 +44,9 @@ class ServiceResource extends Resource
             ]);
     }
 
+    /**
+     * @throws \Exception
+     */
     public static function table(Table $table): Table
     {
         return $table
@@ -51,13 +54,10 @@ class ServiceResource extends Resource
                 TextColumn::make('id')
                     ->label(__('ID')),
                 TextColumn::make('name_en'),
-                TextColumn::make('name_ar'),
                 ImageColumn::make('icon'),
                 ToggleColumn::make('active'),
                 TextColumn::make('description_en')
-                    ->label(__('Description (English)')),
-                TextColumn::make('description_ar')
-                    ->label(__('Description (Arabic)')),
+                    ->label(__('Description')),
             ])
             ->filters([
                 //

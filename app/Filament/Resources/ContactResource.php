@@ -38,9 +38,13 @@ class ContactResource extends Resource
             ->columns([
                 TextColumn::make('id')
                     ->label(__('ID')),
-                TextColumn::make('name')->searchable(),
-                TextColumn::make('email')->searchable(),
-                TextColumn::make('phone')->searchable(),
+                TextColumn::make('name')
+                    ->searchable(),
+                TextColumn::make('email')
+                    ->searchable(),
+                TextColumn::make('phone')
+                    ->copyable()
+                    ->searchable(),
                 TextColumn::make('message'),
                 TextColumn::make('created_at'),
             ])

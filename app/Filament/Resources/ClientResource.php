@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ClientResource\Pages;
 use App\Filament\Resources\ClientResource\RelationManagers;
 use App\Models\Client;
+use Exception;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
@@ -30,13 +31,16 @@ class ClientResource extends Resource
             ->schema([
                 TextInput::make('name_en')
                     ->required()
-                    ->label(__('Name (English)')),
+                    ->label(__('Name')),
                 FileUpload::make('icon')
                     ->required()
                     ->label(__('Icon')),
             ]);
     }
 
+    /**
+     * @throws Exception
+     */
     public static function table(Table $table): Table
     {
         return $table

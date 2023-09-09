@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\JobResource\Pages;
 use App\Filament\Resources\JobResource\RelationManagers;
 use App\Models\Job;
+use Exception;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -42,12 +43,11 @@ class JobResource extends Resource
                 TextInput::make('description')
                     ->label(__('Job Description'))
                     ->required(),
-
             ]);
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public static function table(Table $table): Table
     {
