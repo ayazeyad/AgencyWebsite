@@ -17,4 +17,9 @@ class JobController extends Controller
         $reviews = employeeReview::all();
         return view('jobs', compact('jobs','reviews'));
     }
+
+    public function show(Job $job): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
+    {
+        return view('job', compact('job'));
+    }
 }

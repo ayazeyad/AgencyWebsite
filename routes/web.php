@@ -37,6 +37,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 Route::get('/request', [UserServiceRequestController::class, 'index'])->name('request');
 Route::get('/jobs', [JobController::class, 'index'])->name('jobs');
+Route::get('/jobs/{job}', [JobController::class, 'show'])->name('jobs.show');
 
 Auth::routes();
 

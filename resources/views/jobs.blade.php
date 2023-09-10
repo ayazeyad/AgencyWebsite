@@ -9,12 +9,16 @@
         <div class="row mt-4">
             @foreach ($jobs as $job)
                 <div class="col-md-4">
-                    <div class="card mb-4">
+                    <div class="card mb-4 job-card">
+                        <a href="{{ route('jobs.show', ['job' => $job->id]) }}">
                         <div class="card-body">
+                            <small class="job-small"> job title </small>
                             <h2 class="card-title">{{ $job->title }}</h2>
+                            <small class="job-small"> job level </small>
                             <p class="card-text"><strong>Level:</strong> {{ $job->level }}</p>
-                            <p class="card-text">{{ $job->description }}</p>
+{{--                            <p class="card-text">{{ $job->description }}</p>--}}
                         </div>
+                        </a>
                     </div>
                 </div>
             @endforeach

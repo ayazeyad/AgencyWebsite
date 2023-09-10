@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->enum('level',['internship','entry-level','Intermediate','Mid-level','Senior']);
             $table->text('description');
+            $table->binary('status');
             $table->timestamps();
         });
     }

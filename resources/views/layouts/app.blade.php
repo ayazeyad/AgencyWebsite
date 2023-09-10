@@ -36,7 +36,8 @@
         }
 
         .right p {
-            font-size: 30px; /* Adjust font size as needed */
+            font-size: 100px; /* Adjust font size as needed */
+            opacity: 1;
         }
 
         .start-button {
@@ -174,7 +175,6 @@
             justify-content: space-between; /* Distribute reasons evenly horizontally */
             max-width: 1200px; /* Adjust maximum width as needed */
             margin: 0 auto;
-
         }
 
         .why-work-with-us h2 {
@@ -191,7 +191,6 @@
             text-align: center;
             margin-bottom: 20px; /* Adjust spacing between reason boxes */
             border-radius: 5px; /* Rounded corners for reason boxes */
-
             box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
         }
 
@@ -209,6 +208,7 @@
         .reason p {
             font-size: 16px;
             color: #666;
+
         }
 
         /* Media Query for Responsive Design */
@@ -224,6 +224,7 @@
 
         .footer-distributed{
             background: #779dc5;
+            /*background-color:#49a4d6;*/
             box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
             box-sizing: border-box;
             width: 100%;
@@ -621,9 +622,190 @@
         .job-description {
             margin-top: 10px;
         }
+/***job details page*
+/* Add custom styles here */
+        .job-details {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+        }
 
+        .job-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .job-level {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .job-description p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            margin-top: 15px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .job-details {
+                padding: 10px;
+            }
+            .job-title {
+                font-size: 20px;
+            }
+            .job-level {
+                font-size: 16px;
+            }
+            .job-description p {
+                font-size: 14px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .job-card:hover {
+            transform: scale(1.05); /* Increase the card size on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+        }
+        .job-small {
+            color:blue;
+        }
+/****/
+        .card-title {
+            color: #1c1b1b;
+        }
+        .card-text{
+            color: #1c1b1b;
+        }
+
+        /***team**/
+        .our-team{
+            text-align: center;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease 0s;
+        }
+        .our-team .pic{
+            background: #1b4ac2;
+            transition: all 0.3s ease 0s;
+        }
+        .our-team:hover .pic{
+            padding: 10px;
+            border-radius: 10px;
+            transform: scale(0.5) translateY(-30%);
+        }
+        .our-team .pic img{
+            width: 100%;
+            height: 300px;
+        }
+        .our-team .team-content{
+            width: 100%;
+            padding: 7px 15px;
+            background: #1b4ac2;
+            position: absolute;
+            bottom: -30%;
+            right: 0;
+            opacity: 0;
+            transition: all 0.3s ease 0s;
+        }
+        .our-team:hover .team-content{
+            opacity: 1;
+            bottom: -10px;
+        }
+        .our-team .title{
+            font-size: 22px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 5px 0;
+        }
+        .our-team .post{
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            font-style: italic;
+            text-transform: capitalize;
+            margin: 0 0 5px 0;
+        }
+        .our-team .social{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            transition: all 0.35s ease 0s;
+        }
+        .our-team .social li{
+            display: inline-block;
+            margin: 0 5px 0 0;
+        }
+        .our-team .social li a{
+            display: block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 15px 0 15px 0;
+            font-size: 20px;
+            color: #fff;
+            overflow: hidden;
+            z-index: 1;
+            position: relative;
+            transition: all 0.35s ease 0s;
+        }
+        .our-team .social li a:before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: #1b4ac2;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            z-index: -1;
+            transition: all 0.3s ease-in-out 0s;
+        }
+        .our-team .social li a:hover:before{ left: 0; }
+        @media only screen and (max-width: 990px){
+            .our-team{ margin-bottom: 30px; }
+        }
+
+        /**bg videos**/
+        .video-container {
+            position: relative;
+            width: 96%;
+            height: 80vh;
+            overflow: hidden;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: rgba(147, 145, 145, 0.14); /* Semi-transparent background */
+            color: #1b4ac2; /* Text color */
+            padding: 20px;
+        }
 
     </style>
+
 
 </head>
 <body>
@@ -644,7 +826,7 @@
                 <a href="./#about" class="nav-item nav-link">About</a>
                 <a href="./request" class="nav-item nav-link">Request a Service</a>
                 <a href="./contact" class="nav-item nav-link">Contact</a>
-                <a href="./jobs" class="nav-item nav-link">Jobs</a>
+                <a href="../jobs" class="nav-item nav-link">Jobs</a>
 
             @guest
                     @if (Route::has('login'))
