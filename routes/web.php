@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\JobController;
@@ -31,6 +32,7 @@ Route::get('/home', [ServiceController::class, 'index'])->name('home');
 Route::get('/contact', [ContactUsController::class ,'showContactForm'])->name('contact');
 Route::post('/contact', [ContactUsController::class ,'contactUs'])->name('contactus');
 Route::view('/contact/success', 'success.blade.php')->name('contact');
+Route::get('/clients', [ClientController::class ,'index'])->name('clients');
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/request', [UserServiceRequestController::class, 'store'])->name('service');

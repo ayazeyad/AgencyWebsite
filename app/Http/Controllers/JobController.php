@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employee;
 use App\Models\employeeReview;
 use App\Models\job;
 use App\Models\Service;
@@ -15,7 +16,10 @@ class JobController extends Controller
     {
         $jobs = Job::all();
         $reviews = employeeReview::all();
-        return view('jobs', compact('jobs','reviews'));
+        $employees = Employee::with('employeeReview')->get();
+
+        return view('jobs', compact('employees','reviews','jobs'));
+//        return view('jobs', compact('jobs','reviews'));
     }
 
     public function show(Job $job): View|Application|Factory|\Illuminate\Contracts\Foundation\Application

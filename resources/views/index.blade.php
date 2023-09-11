@@ -30,22 +30,45 @@
 {{--    </div>--}}
 
 
-    <section class="why-work-with-us" id="services">
-        <div class="containerSection">
-            <h3 class="text">Our Comprehensive Services</h3>
+{{--    <section class="why-work-with-us" id="services">--}}
+{{--        <div class="containerSection">--}}
+{{--            <h2 class="text">Our Comprehensive Services</h2>--}}
+{{--        @foreach($services as $service)--}}
 
-        @foreach($services as $service)
+{{--            <div class="reason">--}}
+{{--                <img src="{{ asset('storage/' . $service->icon) }}" alt="serviceIcon" width="60px" height="60px">--}}
+{{--                <h3>{{ $service->name_en }}</h3>--}}
+{{--                <p>{{ $service->description_en }}</p>--}}
+{{--            </div>--}}
+{{--            @endforeach--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
-            <div class="reason">
-                <img src="{{ asset('storage/' . $service->icon) }}" alt="serviceIcon" width="60px" height="60px">
-                <h3>{{ $service->name_en }}</h3>
-                <p>{{ $service->description_en }}</p>
-            </div>
-            @endforeach
+{{--    <div class="card-container">--}}
+{{--    <h2 class="text">Our Comprehensive Services</h2>--}}
+{{--    @foreach($services as $service)--}}
+{{--            <div class="card">--}}
+{{--                <div class="card-icon">--}}
+{{--                <img src="{{ asset('storage/' . $service->icon) }}" alt="serviceIcon" width="60px" height="60px">--}}
+{{--                </div>--}}
+{{--                <div class="card-content">--}}
+{{--                    <h3>{{ $service->name_en }}</h3>--}}
+{{--                    <p>{{ $service->description_en }}</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        @endforeach--}}
+{{--    </div>--}}
 
+    <div class="services">
+        <h2 class="text">Our Comprehensive Services</h2>
+    @foreach($services as $service)
+        <div class="service">
+            <img src="{{ asset('storage/' . $service->icon) }}" alt="serviceIcon" width="60px" height="60px">
+            <h3>{{ $service->name_en }}</h3>
+            <p>{{ $service->description_en }}</p>
         </div>
-    </section>
-
+        @endforeach
+    </div>
 
 
     <section id="about" class="about-us">
@@ -68,7 +91,7 @@
 
 <section class="why-work-with-us">
     <div class="container">
-        <h3 class="text">meet our team</h3>
+        <h2 class="text">meet our team</h2>
         <div class="row">
             <div class="col-md-4 col-sm-6">
                 <div class="our-team">
@@ -90,7 +113,7 @@
             <div class="col-md-4 col-sm-6">
                 <div class="our-team">
                     <div class="pic">
-                        <img src="{{asset('storage/ai.jpg')}}">
+                        <img src="{{asset('storage/person.jpg')}}">
                     </div>
                     <div class="team-content">
                         <h3 class="title">Williamson</h3>
@@ -107,7 +130,7 @@
             <div class="col-md-4 col-sm-6">
                 <div class="our-team">
                     <div class="pic">
-                        <img src="{{asset('storage/ai.jpg')}}">
+                        <img src="{{asset('storage/person.jpg')}}">
                     </div>
                     <div class="team-content">
                         <h3 class="title">Kristiana</h3>
@@ -123,9 +146,11 @@
         </div>
     </div>
 </section>
+
+
     <section class="why-work-with-us">
         <div class="containerSection">
-            <h2 class="text">Why You Should Work with Us</h2>
+            <h2 class="text">Why You Should Work With Us</h2>
             <div class="reason">
                 <img  src="{{ asset('storage/Expertise.png') }}" alt="Reason 1" width="90px" height="90px">
                 <h3>Expertise</h3>
@@ -137,12 +162,12 @@
                 <p>We embrace innovation and stay ahead of industry trends to deliver cutting-edge solutions.</p>
             </div>
             <div class="reason">
-                <img src="{{ asset('storage/focus.png') }}" alt="Reason 3" width="90px" height="90px">
+                <img src="{{ asset('storage/Customization.png') }}" alt="Reason 3" width="90px" height="90px">
                 <h3>Customization</h3>
                 <p>Our solutions are tailored to your unique needs, ensuring a personalized experience.</p>
             </div>
             <div class="reason">
-                <img src="{{ asset('storage/focus.png') }}" alt="Reason 4" width="90px" height="90px">
+                <img src="{{ asset('storage/Client-Centric.png') }}" alt="Reason 4" width="90px" height="90px">
                 <h3>Client-Centric</h3>
                 <p>We prioritize your goals and collaborate closely to achieve your desired outcomes.</p>
             </div>

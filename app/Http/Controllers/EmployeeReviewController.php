@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employee;
 use App\Models\employeeReview;
 use App\Models\job;
 use Illuminate\Http\Request;
@@ -15,6 +16,17 @@ class EmployeeReviewController extends Controller
         $reviews = employeeReview::all();
         $jobs = Job::all();
 
-        return view('jobs', compact('reviews','jobs'));
+        $employees = Employee::with('employeeReview')->get();
+
+        return view('jobs', compact('employees','reviews','jobs'));
+
+//        return view('jobs', compact('reviews','jobs'));
+    }
+
+    public function getEmployeeDataWithReview(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
+    {
+        $employees = Employee::with('employeeReview')->get();
+
+        return view('jobs', compact('employees'));
     }
 }

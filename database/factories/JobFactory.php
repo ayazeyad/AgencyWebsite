@@ -21,6 +21,7 @@ class JobFactory extends Factory
             'title' => $this->faker->jobTitle,
             'level' => $this->faker->randomElement(['internship', 'entry-level', 'Intermediate', 'Mid-level', 'Senior']),
             'description' => $this->faker->paragraph,
+            'status' => $this->faker->paragraph,
         ];
     }
 }

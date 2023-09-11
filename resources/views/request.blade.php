@@ -2,7 +2,7 @@
 
 @section('content')
     <header>
-        <img src="{{ asset('storage/background.jpg') }}" alt="serviceIcon" width="1349px" height="210px">
+        <img src="{{ asset('storage/background.jpg') }}" alt="serviceIcon" width="1349px" height="225px">
 
         <h1>Request a Service</h1>
     </header>

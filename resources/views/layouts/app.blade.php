@@ -68,8 +68,8 @@
 
         .services .containerSection {
             display: flex;
-            flex-wrap: wrap; /* Allow services to wrap to the next row on smaller screens */
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: center;
             max-width: 1200px; /* Adjust maximum width as needed */
             margin: 0 auto;
         }
@@ -185,13 +185,18 @@
         }
 
         .reason {
-            flex-basis: calc(50% - 20px); /* Two reasons per row on larger screens */
-            background-color: #f9f9f9; /* Background color for reason boxes */
+            background-color: #fff;
             padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex-basis: calc(25% - 20px);
+
+            /*background-color: #f9f9f9; !* Background color for reason boxes *!*/
             text-align: center;
             margin-bottom: 20px; /* Adjust spacing between reason boxes */
-            border-radius: 5px; /* Rounded corners for reason boxes */
-            box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+            /*border-radius: 5px; !* Rounded corners for reason boxes *!*/
+            /*box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;*/
         }
 
         .reason img {
@@ -696,7 +701,7 @@
             transition: all 0.3s ease 0s;
         }
         .our-team .pic{
-            background: #1b4ac2;
+            background: #779dc5;
             transition: all 0.3s ease 0s;
         }
         .our-team:hover .pic{
@@ -711,7 +716,7 @@
         .our-team .team-content{
             width: 100%;
             padding: 7px 15px;
-            background: #1b4ac2;
+            background: #779dc5;
             position: absolute;
             bottom: -30%;
             right: 0;
@@ -765,7 +770,7 @@
             content: "";
             width: 100%;
             height: 100%;
-            background: #1b4ac2;
+            background: #779dc5;
             position: absolute;
             top: 0;
             left: -100%;
@@ -780,8 +785,8 @@
         /**bg videos**/
         .video-container {
             position: relative;
-            width: 96%;
-            height: 80vh;
+            width: 100%;
+            height: 100vh;
             overflow: hidden;
         }
 
@@ -803,6 +808,246 @@
             color: #1b4ac2; /* Text color */
             padding: 20px;
         }
+
+/*!*cards*!*/
+        .scard-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 20px;
+        }
+
+        .scard {
+            width: calc(33.33% - 40px); /* 3 cards per row with increased spacing */
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .scard:hover {
+            transform: scale(1.05); /* Scale up the card on hover */
+        }
+
+        .scard-icon {
+            font-size: 48px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .scard-content {
+            padding: 10px;
+        }
+
+        .scard h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .scard p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Ensure equal height for cards in the same row */
+        @media (min-width: 768px) {
+            .scard {
+                height: auto;
+            }
+        }
+
+
+.centered-h1 {
+    text-align: center; /* Center the text horizontally */
+        padding: 20px 0; /* Add padding top and bottom for spacing */
+        font-size: 28px; /* Adjust the font size as needed */
+        color: #333; /* Set the text color */
+        /* Additional styling ideas */
+        /* font-weight: bold; */ /* Optionally make the text bold */
+        /* background-color: #f5f5f5; */ /* Optionally add a background color */
+        }
+
+/*section*/
+        /* Style the services container */
+        .services {
+            /*max-width: 1200px;*/
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Style individual service items */
+        .service {
+            text-align: center;
+            margin: 10px;
+            width: 360px; /* Adjust this value as needed */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add hover effect */
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style service icons (assuming you're using FontAwesome icons) */
+        .service i {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        /* Style service titles and descriptions */
+        .service h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            font-size: 14px;
+        }
+/*our clients*/
+        /* Style the client list container */
+        .client-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Style individual client cards */
+        .client-card {
+            margin: 50px;
+            max-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .client-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style client images */
+        .client-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+        }
+
+        /* Style client information */
+        .client-info {
+            padding: 20px;
+        }
+
+        .client-info h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        /* Style social media icons */
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #007bff; /* Change to your preferred hover color */
+        }
+
+        /*clients*/
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .clients-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .clients-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .client-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .client-item {
+            flex: 0 0 calc(20% - 20px);
+            /*margin: 20px;*/
+            /*padding: 20px;*/
+            /*background-color: #fff;*/
+            /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
+            /*border-radius: 10px;*/
+            /*transition: transform 0.2s ease-in-out;*/
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .client-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .client-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
+            background-color: #f0f0f0;
+        }
+
+        .client-image img {
+            max-width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .client-name {
+            font-size: 20px;
+            color: #555;
+            font-weight: bold;
+        }
+
+
+
+
+
 
     </style>
 

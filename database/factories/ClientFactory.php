@@ -20,6 +20,11 @@ class ClientFactory extends Factory
         return [
             'icon' => $this->faker->image,
             'name_en' => $this->faker->company,
+            'facebook' => $this->faker->company,
+            'instagram' => $this->faker->company,
+            'website' => $this->faker->company,
+            'play-store' => $this->faker->company,
+            'app-store' => $this->faker->company,
         ];
     }
 }

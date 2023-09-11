@@ -15,6 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('icon');
             $table->string('name_en');
+            $table->string('facebook');
+            $table->string('instagram');
+            $table->string('website');
+            $table->string('play-store');
+            $table->string('app-store');
             $table->timestamps();
         });
     }

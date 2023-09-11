@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<body>
 <main>
     <div class="container">
         <header>
@@ -16,7 +17,6 @@
                             <h2 class="card-title">{{ $job->title }}</h2>
                             <small class="job-small"> job level </small>
                             <p class="card-text"><strong>Level:</strong> {{ $job->level }}</p>
-{{--                            <p class="card-text">{{ $job->description }}</p>--}}
                         </div>
                         </a>
                     </div>
@@ -26,32 +26,17 @@
     </div>
 </main>
 
-<div class="container">
-    <h1 class="mt-5">Employee Reviews</h1>
 
-    <div id="employeeReviewsCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            @foreach ($reviews as $key => $review)
-                <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <p class="card-text">{{ $review->review }}</p>
-                            <!-- Add other review details here -->
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-        <a class="carousel-control-prev" href="#employeeReviewsCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#employeeReviewsCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </a>
-    </div>
-</div>
+    @foreach($employees as $employee)
+        <h2>{{ $employee->name_en }}</h2>
+        <h3>{{ $employee->position_en }}</h3>
+        @if($employee->employeeReview)
+            <p>Review: {{ $employee->employeeReview->review }}</p>
+        @else
+            <p>No review available.</p>
+        @endif
+    @endforeach
 
+</body>
 
 @endsection

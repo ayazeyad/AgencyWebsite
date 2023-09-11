@@ -1,1 +1,784 @@
+body{background-color: #4e98b2;}
+.containerSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Spread elements evenly horizontally */
+    padding: 20px; /* Optional spacing */
+}
+
+.left img {
+    max-width: 100%; /* Ensure the image doesn't exceed the container width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Optional spacing between image and text */
+}
+
+.right p {
+    font-size: 100px; /* Adjust font size as needed */
+    opacity: 1;
+}
+
+.start-button {
+    background-color:#fff ; /* Change to your desired color */
+    color: #007bff; /* Text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 18px; /* Adjust font size as needed */
+    border: none; /* Remove border */
+    cursor: pointer;
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;        }
+
+.start-button:hover {
+    background-color: #e1e3e7; /* Change to your desired hover color */
+}
+.text {
+    padding:0px 350px;
+}
+@media (max-width: 768px) {
+    .text {
+        padding:0px;
+    }
+}
+.services {
+    background-color: #f5f5f5; /* Background color for the section */
+    padding: 40px 0; /* Adjust padding as needed */
+}
+
+.services .containerSection {
+    display: flex;
+    flex-wrap: wrap; /* Allow services to wrap to the next row on smaller screens */
+    justify-content: space-between;
+    max-width: 1200px; /* Adjust maximum width as needed */
+    margin: 0 auto;
+}
+
+.service {
+    width: calc(33.33% - 20px); /* Adjust width and spacing as needed */
+    background-color: #fff; /* Background color for service boxes */
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px; /* Adjust spacing between service boxes */
+    border-radius: 5px; /* Rounded corners for service boxes */
+}
+
+.service img {
+    max-width: 100%; /* Ensure images fit within their containers */
+}
+
+.service h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.service p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    h2{padding:0px;}
+    .service {
+        width: calc(50% - 20px); /* Two services per row on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    h2{padding:0px;}
+    .service {
+        width: 100%; /* One service per row on mobile screens */
+    }
+}
+/*about us*/
+
+.about-us {
+    background-color: #779dc5; /* Background color for the section */
+    padding: 60px 0; /* Adjust padding as needed */
+}
+
+.about-us .containerSection {
+    display: flex;
+    flex-direction: column; /* Stack content vertically on small screens */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center-align text */
+    max-width: 1200px; /* Adjust maximum width as needed */
+    margin: 0 auto;
+    color:whitesmoke;
+}
+
+.about-us h2 {
+    font-size: 28px; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Add spacing below the heading */
+}
+
+.about-us p {
+    font-size: 18px; /* Adjust font size as needed */
+    color: white;
+    line-height: 1.6; /* Adjust line height for readability */
+}
+
+.about-us .right img {
+    max-width: 100%; /* Ensure the image fits within its container */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 20px; /* Add spacing between text and image */
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+/* Media Query for Responsive Design */
+@media (min-width: 768px) {
+    .about-us .containerSection {
+        flex-direction: row; /* Side-by-side arrangement on larger screens */
+        justify-content: space-between; /* Distribute content evenly horizontally */
+        align-items: flex-start; /* Align content to the top */
+    }
+
+    .about-us .left {
+        flex: 1; /* Allow the left side to grow to take available space */
+        text-align: center;
+        margin-right: 40px; /* Add spacing between text and image */
+    }
+
+    .about-us .right {
+        flex: 1; /* Allow the right side to grow to take available space */
+    }
+}
+
+.why-work-with-us {
+    background-color: #ffffff; /* Background color for the section */
+    padding: 60px 0; /* Adjust padding as needed */
+}
+
+.why-work-with-us .containerSection {
+    display: flex;
+    flex-wrap: wrap; /* Allow reasons to wrap on smaller screens */
+    justify-content: space-between; /* Distribute reasons evenly horizontally */
+    max-width: 1200px; /* Adjust maximum width as needed */
+    margin: 0 auto;
+}
+
+.why-work-with-us h2 {
+    font-size: 28px; /* Adjust font size as needed */
+    margin-bottom: 50px; /* Add spacing below the heading */
+    text-align: center; /* Center-align the heading */
+    color:blue
+}
+
+.reason {
+    flex-basis: calc(50% - 20px); /* Two reasons per row on larger screens */
+    background-color: #f9f9f9; /* Background color for reason boxes */
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px; /* Adjust spacing between reason boxes */
+    border-radius: 5px; /* Rounded corners for reason boxes */
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.reason img {
+    max-width: 100%; /* Ensure images fit within their containers */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Add spacing below the image */
+}
+
+.reason h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.reason p {
+    font-size: 16px;
+    color: #666;
+
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .reason {
+        flex-basis: calc(100% - 20px); /* One reason per row on smaller screens */
+    }
+}
+
+.icon{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.footer-distributed{
+    background: #779dc5;
+    /*background-color:#49a4d6;*/
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+    width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+    color:  #ffffff;
+    font: normal 36px 'Open Sans', cursive;
+    margin: 0;
+}
+
+.footer-distributed h3 span{
+    color:  blue;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    font-weight:400;
+    text-decoration: none;
+    color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+    color:  #222;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Footer Center */
+footer{
+    padding-top:100px;
+}
+.footer-distributed .footer-center{
+    width: 35%;
+}
+
+.footer-distributed .footer-center i{
+    background-color:  #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+    display: inline-block;
+    color: #ffffff;
+    font-weight:400;
+    vertical-align: middle;
+    margin:0;
+}
+
+.footer-distributed .footer-center p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+    color:  blue;
+    text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+    content: "|";
+    font-weight:300;
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+    content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+    width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+    line-height: 20px;
+    color: #444848;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+    display: block;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color:  #33383b;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+    .footer-distributed{
+        font: bold 14px sans-serif;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-distributed .footer-center i{
+        margin-left: 0;
+    }
+
+}
+/****contact us**/
+/* Reset some default styles */
+body, h1, h2, p, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    background-color: #f4f4f4;
+}
+
+header {
+    color: blue;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 20px 20px 20px 20px;
+}
+
+.contact-info, .contact-form {
+    padding: 20px;
+}
+
+.contact-info h2, .contact-form h2 {
+    color: blue;
+}
+
+.contact-info p {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.contact-form form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    grid-column: span 1;
+}
+
+.contact-form button {
+    background-color: blue;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+    .contact-container {
+        flex-direction: row;
+    }
+
+    .contact-info, .contact-form {
+        flex: 1;
+    }
+}
+
+
+
+.underlined {
+    /*   background: red; */
+    position: relative;
+}
+
+.underline-mask:after {
+    content: '';
+    position: absolute;
+    top: 95%;
+    width: 150%;
+    aspect-ratio: 3 / 1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    border: 6px solid hsl(280 80% 50%);
+    /* Use a conic gradient mask to hide and show the bits you want */
+    --spread: 140deg;
+    --start: 290deg;
+    mask: conic-gradient(from var(--start), white 0 var(--spread), transparent var(--spread));
+}
+
+
+.underline-overflow {
+    display: inline-block;
+    /* A little extra padding and overflow hidden   */
+    overflow: hidden;
+    padding-bottom: clamp(1rem, 2vmin, 2rem);
+}
+.underline-overflow:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    height: 150%;
+    aspect-ratio: 2.5 / 1;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    border-radius: 50%;
+    border: 6px solid hsl(10 80% 50%);
+}
+
+.underline-clip:after {
+    content: '';
+    position: absolute;
+    top: 95%;
+    width: 140%;
+    aspect-ratio: 3 / 1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    border: 6px solid hsl(223, 76%, 43%);
+    /* Use a clip-path to hide and show the bits you want */
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
+}
+
+/* Hide the image on phone screens */
+@media (max-width: 768px) {
+    .image-on-desktop {
+        display: none;
+    }
+}
+
+/********************/
+
+
+/* Main content container styles */
+.request_container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+select, textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #1b4ac2;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+
+
+/* Style for job listings */
+.job-listings {
+    display: grid;
+    gap: 20px;
+}
+
+.job {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.job h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.job-level {
+    font-weight: bold;
+    color: #007BFF;
+    margin: 0;
+}
+
+.job-description {
+    margin-top: 10px;
+}
+/***job details page*
+/* Add custom styles here */
+.job-details {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.job-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.job-level {
+    font-size: 18px;
+    color: #666;
+}
+
+.job-description p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 15px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .job-details {
+        padding: 10px;
+    }
+    .job-title {
+        font-size: 20px;
+    }
+    .job-level {
+        font-size: 16px;
+    }
+    .job-description p {
+        font-size: 14px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.job-card:hover {
+    transform: scale(1.05); /* Increase the card size on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+.job-small {
+    color:blue;
+}
+/****/
+.card-title {
+    color: #1c1b1b;
+}
+.card-text{
+    color: #1c1b1b;
+}
+
+/***team**/
+.our-team{
+    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+.our-team .pic{
+    background: #1b4ac2;
+    transition: all 0.3s ease 0s;
+}
+.our-team:hover .pic{
+    padding: 10px;
+    border-radius: 10px;
+    transform: scale(0.5) translateY(-30%);
+}
+.our-team .pic img{
+    width: 100%;
+    height: 300px;
+}
+.our-team .team-content{
+    width: 100%;
+    padding: 7px 15px;
+    background: #1b4ac2;
+    position: absolute;
+    bottom: -30%;
+    right: 0;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+.our-team:hover .team-content{
+    opacity: 1;
+    bottom: -10px;
+}
+.our-team .title{
+    font-size: 22px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 5px 0;
+}
+.our-team .post{
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    font-style: italic;
+    text-transform: capitalize;
+    margin: 0 0 5px 0;
+}
+.our-team .social{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: all 0.35s ease 0s;
+}
+.our-team .social li{
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+.our-team .social li a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 15px 0 15px 0;
+    font-size: 20px;
+    color: #fff;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    transition: all 0.35s ease 0s;
+}
+.our-team .social li a:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #1b4ac2;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+    transition: all 0.3s ease-in-out 0s;
+}
+.our-team .social li a:hover:before{ left: 0; }
+@media only screen and (max-width: 990px){
+    .our-team{ margin-bottom: 30px; }
+}
+
+/**bg videos**/
+.video-container {
+    position: relative;
+    width: 96%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(147, 145, 145, 0.14); /* Semi-transparent background */
+    color: #1b4ac2; /* Text color */
+    padding: 20px;
+}
 
